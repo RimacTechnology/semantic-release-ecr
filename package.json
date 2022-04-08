@@ -1,6 +1,6 @@
 {
     "name": "@rimac-automobili/semantic-release-ecr",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "semantic-release plugin to publish a docker image to the AWS Elastic Container Registry",
     "main": "lib/index.js",
     "repository": "git@github.com:RimacTechnology/semantic-release-ecr.git",
