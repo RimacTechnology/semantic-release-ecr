@@ -1,0 +1,73 @@
+{
+    "name": "@rimac-automobili/semantic-release-ecr",
+    "version": "0.1.0",
+    "description": "semantic-release plugin to publish a docker image to the AWS Elastic Container Registry",
+    "main": "lib/index.js",
+    "repository": "git@github.com:RimacTechnology/semantic-release-ecr.git",
+    "author": "Rimac Technology d.o.o.",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint './src/**/*' --quiet",
+        "cm": "cz",
+        "release": "semantic-release",
+        "postinstall": "husky install",
+        "prepack": "pinst --disable",
+        "postpack": "pinst --enable"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "lib"
+    ],
+    "keywords": [
+        "release",
+        "semantic-release",
+        "ecr"
+    ],
+    "engines": {
+        "node": ">=16.14",
+        "yarn": ">=3"
+    },
+    "resolutions": {
+        "npm/chalk": "^4.1.2"
+    },
+    "peerDependencies": {
+        "semantic-release": ">=19.0.0"
+    },
+    "dependencies": {
+        "aggregate-error": "^3.1.0",
+        "aws-sdk": "^2.1110.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.3",
+        "@commitlint/config-conventional": "^16.2.1",
+        "@rimac-automobili/eslint-config": "^22.1.0",
+        "@semantic-release/changelog": "^6.0.1",
+        "@semantic-release/commit-analyzer": "^9.0.2",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/github": "^8.0.4",
+        "@semantic-release/npm": "^9.0.1",
+        "@semantic-release/release-notes-generator": "^10.0.3",
+        "@types/semantic-release": "^17.2.3",
+        "commitizen": "^4.2.4",
+        "conventional-changelog-conventionalcommits": "^4.6.3",
+        "eslint": "^8.12.0",
+        "husky": "^7.0.4",
+        "pinst": "^3.0.0",
+        "semantic-release": "^19.0.2",
+        "typescript": "^4.6.3"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "packageManager": "yarn@3.2.0"
+}
