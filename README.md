@@ -24,8 +24,7 @@ $ yarn add --dev @rimac-automobili/semantic-release-ecr
 
 ## Usage
 
-The plugin can be configured in the [**
-semantic-release** configuration file](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration):
+The plugin can be configured in the [**semantic-release** configuration file](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration):
 
 ```json
 {
@@ -56,23 +55,19 @@ configuration option
 
 ### Environment variables
 
-| Variable                     | Description       |
-|------------------------------|-------------------|
-| `AWS_ACCESS_KEY_ID` (**)     | AWS access key id |
-| `AWS_SECRET_ACCESS_KEY` (**) | AWS secret key    |
-| `AWS_DEFAULT_REGION` (**)    | AWS region        |
-
-_(**) = required variable._
+| Variable                | Description       | Required |
+|-------------------------|-------------------|:--------:|
+| `AWS_ACCESS_KEY_ID`     | AWS access key id |    ✓     |
+| `AWS_SECRET_ACCESS_KEY` | AWS secret key    |    ✓     |
+| `AWS_DEFAULT_REGION`    | AWS region        |    ✓     |
 
 ### Options
 
-| Options          | Description                                                                                                                                                                                                                                                                                                 | Default               |
-|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| `buildImage`     | Docker command which will build an image                                                                                                                                                                                                                                                                    | `.`                   |
-| `imageName` (**) | The name of the image to push to the ECR. The name should be the same as your ECR repository name (example: `my-ecr-image`). Remember that you don't need to add your registry URL in front of the image name, the plugin will fetch this URL from AWS and add it for you. Don't add tag in the `imageName` | `.`                   |
-| `tags`           | Array of string which can be static values like `latest` or environment variables like `$NODE_ENV`                                                                                                                                                                                                          | `nextRelease.version` |
-
-_(**) = required option._
+| Options      | Description                                                                                                                                                                                                                                                                                                 | Default               | Required |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|:--------:|
+| `buildImage` | Docker command which will build an image                                                                                                                                                                                                                                                                    |                       |          |
+| `imageName`  | The name of the image to push to the ECR. The name should be the same as your ECR repository name (example: `my-ecr-image`). Remember that you don't need to add your registry URL in front of the image name, the plugin will fetch this URL from AWS and add it for you. Don't add tag in the `imageName` |                       |    ✓     |
+| `tags`       | Array of string which can be static values like `latest` or environment variables like `$NODE_ENV`                                                                                                                                                                                                          | `nextRelease.version` |          |
 
 ### Example
 
