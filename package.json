@@ -1,5 +1,5 @@
 {
-    "name": "@rimac-automobili/semantic-release-ecr",
+    "name": "@rimac-technology/semantic-release-ecr",
     "version": "1.0.1",
     "description": "semantic-release plugin to publish a docker image to the AWS Elastic Container Registry",
     "main": "lib/index.js",

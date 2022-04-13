@@ -1,4 +1,4 @@
-# @rimac-automobili/semantic-release-ecr
+# @rimac-technology/semantic-release-ecr
 
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to publish a docker image to the AWS
 Elastic Container Registry
@@ -16,10 +16,10 @@ Elastic Container Registry
 
 ```bash
 # For npm users
-$ npm install --save-dev @rimac-automobili/semantic-release-ecr
+$ npm install --save-dev @rimac-technology/semantic-release-ecr
 
 # For yarn users
-$ yarn add --dev @rimac-automobili/semantic-release-ecr
+$ yarn add --dev @rimac-technology/semantic-release-ecr
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
         "@semantic-release/release-notes-generator",
         "@semantic-release/npm",
         [
-            "@rimac-automobili/semantic-release-ecr",
+            "@rimac-technology/semantic-release-ecr",
             {
                 "imageName": "my-ecr-image"
             }
@@ -78,7 +78,7 @@ configuration option
         "@semantic-release/release-notes-generator",
         "@semantic-release/npm",
         [
-            "@rimac-automobili/semantic-release-ecr",
+            "@rimac-technology/semantic-release-ecr",
             {
                 "buildImage": "docker build . -t my-ecr-image",
                 "imageName": "my-ecr-image",
