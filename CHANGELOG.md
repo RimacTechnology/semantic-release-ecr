@@ -1,3 +1,11 @@
+### [1.0.2](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.0.1...v1.0.2) (2022-04-13)
+
+
+### Other
+
+* replace npm org account with `[@rimac-technology](https://github.com/rimac-technology)` ([a166ded](https://github.com/RimacTechnology/semantic-release-ecr/commit/a166ded9f21f4c778c5096a4fe2747fd4073e7a1))
+* update `yarn.lock` ([8ae290f](https://github.com/RimacTechnology/semantic-release-ecr/commit/8ae290f83c66be808de88cdb739d20d72d61f0bd))
+
 ### [1.0.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.0.0...v1.0.1) (2022-04-09)
 
 
