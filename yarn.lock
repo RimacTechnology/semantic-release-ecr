@@ -690,9 +690,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rimac-automobili/semantic-release-ecr@workspace:.":
+"@rimac-technology/semantic-release-ecr@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@rimac-automobili/semantic-release-ecr@workspace:."
+  resolution: "@rimac-technology/semantic-release-ecr@workspace:."
   dependencies:
     "@commitlint/cli": ^16.2.3
     "@commitlint/config-conventional": ^16.2.1
