@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.0.2...v1.1.0) (2022-11-12)
+
+
+### Features
+
+* upgrade dependencies and reformat code with new eslint rules ([a119253](https://github.com/RimacTechnology/semantic-release-ecr/commit/a1192532072bab084ddfd865593e5bf55ff3b73a))
+
 ### [1.0.2](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.0.1...v1.0.2) (2022-04-13)
 
 
