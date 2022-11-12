@@ -40,20 +40,6 @@ export class Docker {
         }
     }
 
-    private getImage(name: string): DockerImage | undefined {
-        const stdout = execSync('docker images --format "{{json . }}"')
-            .toString('utf-8')
-            .match(/.+/gu)
-
-        if (!stdout) {
-            return
-        }
-
-        return stdout
-            .map<DockerImage>((value) => JSON.parse(value))
-            .find((image) => image.Repository === name)
-    }
-
     public async build(command: string): Promise<boolean> {
         return new Promise((resolve, reject) => {
             const childProcess = exec(command, (error) => {
@@ -67,38 +53,6 @@ export class Docker {
             childProcess.stdout?.pipe(process.stdout)
             childProcess.stderr?.pipe(process.stderr)
         })
-    }
-
-    public async push(name: string, tags: string[], registry: string): Promise<boolean> {
-        const image = this.getImage(name)
-        const [, serverAddress] = registry.split('://')
-
-        if (!image) {
-            throw new AggregateError([getError('ENOIMAGE')])
-        }
-
-        for (const tag of tags) {
-            const imageRepository = `${serverAddress}/${image.Repository}:${tag}`
-
-            execSync(`docker tag ${image.ID} ${imageRepository}`)
-
-            await new Promise<void>((resolve, reject) => {
-                const childProcess = exec(`docker push ${imageRepository}`, (error) => {
-                    if (error){
-                        reject(error)
-                    } else {
-                        resolve()
-                    }
-                })
-
-                childProcess.stdout?.pipe(process.stdout)
-                childProcess.stderr?.pipe(process.stderr)
-            })
-
-            execSync(`docker rmi ${imageRepository}`)
-        }
-
-        return true
     }
 
     public async login(username: string, password: string, registry: string): Promise<boolean> {
@@ -117,5 +71,51 @@ export class Docker {
             childProcess.stdin?.write(password)
             childProcess.stdin?.end()
         })
+    }
+
+    public async push(name: string, tags: string[], registry: string): Promise<boolean> {
+        const image = this.getImage(name)
+        const [, serverAddress] = registry.split('://')
+
+        if (!image) {
+            throw new AggregateError([getError('ENOIMAGE')])
+        }
+
+        for (const tag of tags) {
+            const imageRepository = `${serverAddress}/${image.Repository}:${tag}`
+
+            execSync(`docker tag ${image.ID} ${imageRepository}`)
+
+            await new Promise<void>((resolve, reject) => {
+                const childProcess = exec(`docker push ${imageRepository}`, (error) => {
+                    if (error) {
+                        reject(error)
+                    } else {
+                        resolve()
+                    }
+                })
+
+                childProcess.stdout?.pipe(process.stdout)
+                childProcess.stderr?.pipe(process.stderr)
+            })
+
+            execSync(`docker rmi ${imageRepository}`)
+        }
+
+        return true
+    }
+
+    private getImage(name: string): DockerImage | undefined {
+        const stdout = execSync('docker images --format "{{json . }}"')
+            .toString('utf-8')
+            .match(/.+/gu)
+
+        if (!stdout) {
+            return
+        }
+
+        return stdout
+            .map<DockerImage>((value) => JSON.parse(value))
+            .find((image) => image.Repository === name)
     }
 }

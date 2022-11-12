@@ -30,34 +30,31 @@
         "node": ">=16.14",
         "yarn": ">=3"
     },
-    "resolutions": {
-        "npm/chalk": "^4.1.2"
-    },
     "peerDependencies": {
         "semantic-release": ">=19.0.0"
     },
     "dependencies": {
         "aggregate-error": "^3.1.0",
-        "aws-sdk": "^2.1110.0"
+        "aws-sdk": "^2.1253.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^16.2.3",
-        "@commitlint/config-conventional": "^16.2.1",
-        "@rimac-automobili/eslint-config": "^22.1.0",
+        "@commitlint/cli": "^17.2.0",
+        "@commitlint/config-conventional": "^17.2.0",
+        "@rimac-technology/eslint-config": "^31.1.4",
         "@semantic-release/changelog": "^6.0.1",
         "@semantic-release/commit-analyzer": "^9.0.2",
         "@semantic-release/git": "^10.0.1",
-        "@semantic-release/github": "^8.0.4",
+        "@semantic-release/github": "^8.0.6",
         "@semantic-release/npm": "^9.0.1",
         "@semantic-release/release-notes-generator": "^10.0.3",
-        "@types/semantic-release": "^17.2.3",
-        "commitizen": "^4.2.4",
-        "conventional-changelog-conventionalcommits": "^4.6.3",
-        "eslint": "^8.12.0",
-        "husky": "^7.0.4",
+        "@types/semantic-release": "^17.2.4",
+        "commitizen": "^4.2.5",
+        "conventional-changelog-conventionalcommits": "^5.0.0",
+        "eslint": "^8.27.0",
+        "husky": "^8.0.2",
         "pinst": "^3.0.0",
-        "semantic-release": "^19.0.2",
-        "typescript": "^4.6.3"
+        "semantic-release": "^19.0.5",
+        "typescript": "^4.8.4"
     },
     "config": {
         "commitizen": {
@@ -69,5 +66,5 @@
             "@commitlint/config-conventional"
         ]
     },
-    "packageManager": "yarn@3.2.0"
+    "packageManager": "yarn@3.2.4"
 }
