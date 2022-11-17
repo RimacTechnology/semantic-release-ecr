@@ -7,11 +7,13 @@ body:
       attributes:
           label: Issues
           options:
-              - label: I have checked [existing issues](https://github.com/RimacTechnology/semantic-release-ecr/issues) and there are no existing ones with the same request.
+              - label:
+                    I have checked [existing issues](https://github.com/RimacTechnology/semantic-release-ecr/issues) and there are
+                    no existing ones with the same request.
                 required: true
 
     - type: textarea
       attributes:
-          label: "Feature description"
+          label: 'Feature description'
       validations:
           required: true

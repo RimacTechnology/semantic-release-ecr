@@ -46,3 +46,6 @@ lib/
 
 # MacOS
 .DS_Store
+
+# Cspell
+.cspellcache
