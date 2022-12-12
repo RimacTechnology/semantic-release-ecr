@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.0...v1.1.1) (2022-12-12)
+
+
+### Code Refactoring
+
+* use new style guide ([#4](https://github.com/RimacTechnology/semantic-release-ecr/issues/4)) ([bbbed12](https://github.com/RimacTechnology/semantic-release-ecr/commit/bbbed125d630dc9bab528c3afdffe6acae918c75))
+
 ## [1.1.0](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.0.2...v1.1.0) (2022-11-12)
 
 
