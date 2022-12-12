@@ -30,60 +30,79 @@ type ErrorCodes =
 
 export function getError(code: ErrorCodes): SemanticReleaseError {
     switch (code) {
-    case 'ENOACCESSKEYID':
+    case 'ENOACCESSKEYID': {
         return new SemanticReleaseError(
             'No aws access key id specified.',
             'ENOACCESSKEYID',
             'An aws access key id must be created and set ' +
             'in the `AWS_ACCESS_KEY_ID` environment variable on your CI environment.'
         )
-    case 'ENOSECRETACCESSKEY':
+    }
+
+    case 'ENOSECRETACCESSKEY': {
         return new SemanticReleaseError(
             'No aws secret access key specified.',
             'ENOSECRETACCESSKEY',
             'An aws secret access key id must be created and set ' +
             'in the `AWS_SECRET_ACCESS_KEY` environment variable on your CI environment.'
         )
-    case 'ENOREGION':
+    }
+
+    case 'ENOREGION': {
         return new SemanticReleaseError(
             'No aws region specified.',
             'ENOREGION',
             'An aws region must be created and set ' +
             'in the `AWS_DEFAULT_REGION` environment variable on your CI environment.'
         )
-    case 'ENOAUTHORIZATION':
+    }
+
+    case 'ENOAUTHORIZATION': {
         return new SemanticReleaseError(
             'Error with aws authorization.',
             'ENOAUTHORIZATION',
         )
-    case 'ENOAUTHENTICATION':
+    }
+
+    case 'ENOAUTHENTICATION': {
         return new SemanticReleaseError(
             'Error with docker authentication.',
             'ENOAUTHENTICATION',
         )
-    case 'ENOIMAGENAME':
+    }
+
+    case 'ENOIMAGENAME': {
         return new SemanticReleaseError(
             'No docker image specified.',
             'ENOIMAGENAME',
         )
-    case 'EBUILD':
+    }
+
+    case 'EBUILD': {
         return new SemanticReleaseError(
             'Error executing docker build.',
             'EBUILD',
         )
-    case 'ENOIMAGE':
+    }
+
+    case 'ENOIMAGE': {
         return new SemanticReleaseError(
             'No docker image found with provided name.',
             'ENOIMAGE',
         )
-    case 'EDEPLOY':
+    }
+
+    case 'EDEPLOY': {
         return new SemanticReleaseError(
             'Error executing docker push.',
             'EDEPLOY',
         )
-    default:
+    }
+
+    default: {
         return new SemanticReleaseError(
             'Unknown error occurred.'
         )
+    }
     }
 }

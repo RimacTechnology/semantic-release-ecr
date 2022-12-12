@@ -3,11 +3,7 @@
         "alwaysStrict": true,
         "declaration": true,
         "esModuleInterop": true,
-        "lib": [
-            "ES2021",
-            "DOM",
-            "DOM.ITERABLE"
-        ],
+        "lib": ["ES2021", "DOM", "DOM.ITERABLE"],
         "moduleResolution": "node",
         "noUnusedLocals": true,
         "noUnusedParameters": true,
@@ -15,15 +11,8 @@
         "strict": true,
         "target": "ES2021",
         "module": "CommonJS",
-        "typeRoots": [
-            "node_modules/@types"
-        ]
+        "typeRoots": ["node_modules/@types"]
     },
-    "include": [
-        "src/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
 }
-

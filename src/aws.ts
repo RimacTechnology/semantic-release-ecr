@@ -48,7 +48,7 @@ export class AWS {
     public async login(): Promise<AWSLoginValue> {
         const { authorizationData } = await this.awsEcr.getAuthorizationToken().promise()
 
-        if (!authorizationData || !authorizationData.length) {
+        if (!authorizationData?.length) {
             throw new AggregateError([getError('ENOAUTHORIZATION')])
         }
 

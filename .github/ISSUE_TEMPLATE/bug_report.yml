@@ -7,40 +7,42 @@ body:
       attributes:
           label: Issues
           options:
-              - label: "I have checked [existing issues](https://github.com/RimacTechnology/semantic-release-ecr/issues) and there are no issues with the same problem."
+              - label:
+                    'I have checked [existing issues](https://github.com/RimacTechnology/semantic-release-ecr/issues) and there
+                    are no issues with the same problem.'
                 required: true
 
     - type: input
       attributes:
-          label: "`semantic-release-ecr` Version You Are Using"
+          label: '`semantic-release-ecr` Version You Are Using'
       validations:
           required: true
 
     - type: textarea
       attributes:
-          label: "Your Config"
-          description: "Paste the config you are using with `semantic-release-ecr` from semantic release config file"
+          label: 'Your Config'
+          description: 'Paste the config you are using with `semantic-release-ecr` from semantic release config file'
       validations:
           required: true
 
     - type: textarea
       attributes:
-          label: "Steps to reproduce"
-          description: "A detailed step by step explanation on how to reproduce the problem."
+          label: 'Steps to reproduce'
+          description: 'A detailed step by step explanation on how to reproduce the problem.'
       validations:
           required: true
 
     - type: textarea
       attributes:
-          label: "Expected behavior"
-          description: "A description of the behavior you expected."
+          label: 'Expected behavior'
+          description: 'A description of the behavior you expected.'
       validations:
           required: true
 
     - type: textarea
       attributes:
-          label: "Actual behavior"
-          description: "A description of the actual behavior."
+          label: 'Actual behavior'
+          description: 'A description of the actual behavior.'
       validations:
           required: true
 
@@ -49,5 +51,7 @@ body:
       attributes:
           label: Requirements
           options:
-              - label: I have read and followed the instructions above and understand that my issue will be closed if I did not provide the required information.
+              - label:
+                    I have read and followed the instructions above and understand that my issue will be closed if I did not
+                    provide the required information.
                 required: true
