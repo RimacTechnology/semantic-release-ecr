@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v1.2.0) (2023-04-18)
+
+
+### Features
+
+* replace soon to be deprecated aws-sdk v2 with v3 and update dependencies ([e53ae20](https://github.com/RimacTechnology/semantic-release-ecr/commit/e53ae207bcfdaa8b56d3f90c8c80c82620e7744d))
+
 ## [1.2.0-beta.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v1.2.0-beta.1) (2023-04-18)
 
 
