@@ -1,7 +1,10 @@
 import { Buffer } from 'buffer'
 
+import {
+    ECRClient,
+    GetAuthorizationTokenCommand,
+} from '@aws-sdk/client-ecr'
 import AggregateError from 'aggregate-error'
-import aws from 'aws-sdk'
 import type { Context } from 'semantic-release'
 
 import type {
@@ -35,18 +38,20 @@ export class AWS {
         }
     }
 
-    public readonly awsEcr: InstanceType<typeof aws.ECR>
+    public readonly awsEcr: InstanceType<typeof ECRClient>
 
     constructor(accessKeyId: string, region: string, secretAccessKey: string) {
-        this.awsEcr = new aws.ECR({
-            accessKeyId,
+        this.awsEcr = new ECRClient({
+            credentials: {
+                accessKeyId,
+                secretAccessKey,
+            },
             region,
-            secretAccessKey,
         })
     }
 
     public async login(): Promise<AWSLoginValue> {
-        const { authorizationData } = await this.awsEcr.getAuthorizationToken().promise()
+        const { authorizationData } = await this.awsEcr.send(new GetAuthorizationTokenCommand({}))
 
         if (!authorizationData?.length) {
             throw new AggregateError([getError('ENOAUTHORIZATION')])
