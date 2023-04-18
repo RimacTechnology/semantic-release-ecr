@@ -2250,6 +2250,7 @@ __metadata:
     "@semantic-release/github": ^8.0.7
     "@semantic-release/npm": ^9.0.2
     "@semantic-release/release-notes-generator": ^10.0.3
+    "@types/node": ^18.15.11
     "@types/semantic-release": ^17.2.6
     aggregate-error: ^3.1.0
     commitizen: ^4.3.0
@@ -2565,6 +2566,13 @@ __metadata:
   version: 17.0.23
   resolution: "@types/node@npm:17.0.23"
   checksum: a3517554737cbb042e76c30d0e5482192ac4d9bea0eeb086e2622d9cabf460a0eb52a696b99fcd18e7fcc93c96db6cc7ae507f6608f256ef0b5c1d8c87a5a470
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.15.11":
+  version: 18.15.11
+  resolution: "@types/node@npm:18.15.11"
+  checksum: 977b4ad04708897ff0eb049ecf82246d210939c82461922d20f7d2dcfd81bbc661582ba3af28869210f7e8b1934529dcd46bff7d448551400f9d48b9d3bddec3
   languageName: node
   linkType: hard
 
