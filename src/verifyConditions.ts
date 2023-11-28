@@ -1,11 +1,11 @@
 import AggregateError from 'aggregate-error'
-import type { Context } from 'semantic-release'
+import type { VerifyConditionsContext } from 'semantic-release'
 
 import { AWS } from './aws'
 import { getError } from './error'
 import type { PluginConfig } from './types'
 
-export function verifyConditions(pluginConfig: PluginConfig, context: Context): void {
+export function verifyConditions(pluginConfig: PluginConfig, context: VerifyConditionsContext): void {
     const errors = []
     const awsConfig = AWS.loadConfig(context)
 

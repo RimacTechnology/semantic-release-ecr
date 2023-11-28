@@ -12,7 +12,7 @@ jobs:
         name: Lint and Build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
                   persist-credentials: false
@@ -29,15 +29,15 @@ jobs:
             - run: yarn build
             - uses: actions/upload-artifact@v3
               with:
-                  name: lib
-                  path: lib/
+                  name: dist
+                  path: dist/
     release:
         name: Release
         needs: build
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
                   persist-credentials: false
@@ -49,8 +49,8 @@ jobs:
                   key: node_modules-${{ hashFiles('**/yarn.lock') }}
             - uses: actions/download-artifact@v3
               with:
-                  name: lib
-                  path: lib/
+                  name: dist
+                  path: dist/
             - run: yarn release
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

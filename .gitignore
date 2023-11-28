@@ -43,6 +43,7 @@ node_modules/
 # Project
 build/
 lib/
+dist/
 
 # MacOS
 .DS_Store

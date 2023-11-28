@@ -4,26 +4,22 @@ import {
 } from 'child_process'
 
 import AggregateError from 'aggregate-error'
-import type { Context } from 'semantic-release'
+import type { PublishContext } from 'semantic-release'
 
 import type {
-    DockerConfig,
-    DockerImage,
+    DockerConfigType,
+    DockerImageType,
 } from './docker.types'
 import { getError } from './error'
 import type { PluginConfig } from './types'
 
 export class Docker {
-    public static loadConfig(pluginConfig: PluginConfig, context: Context): DockerConfig {
+    public static loadConfig(pluginConfig: PluginConfig, context: PublishContext): DockerConfigType {
         const tags: string[] = []
-        const rawTags: string[] = []
+        const rawTags: string[] = [context.nextRelease.version]
 
         if (pluginConfig.tags) {
             rawTags.push(...pluginConfig.tags)
-        }
-
-        if (context.nextRelease) {
-            rawTags.push(context.nextRelease.version)
         }
 
         for (const rawTag of rawTags) {
@@ -105,7 +101,7 @@ export class Docker {
         return true
     }
 
-    private getImage(name: string): DockerImage | undefined {
+    private getImage(name: string): DockerImageType | undefined {
         const stdout = execSync('docker images --format "{{json . }}"')
             .toString('utf-8')
             .match(/.+/gu)
@@ -115,7 +111,7 @@ export class Docker {
         }
 
         return stdout
-            .map<DockerImage>((value) => JSON.parse(value))
+            .map<DockerImageType>((value) => JSON.parse(value))
             .find((image) => image.Repository === name)
     }
 }

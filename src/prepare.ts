@@ -1,11 +1,11 @@
 import AggregateError from 'aggregate-error'
-import type { Context } from 'semantic-release'
+import type { PrepareContext } from 'semantic-release'
 
 import { Docker } from './docker'
 import { getError } from './error'
 import type { PluginConfig } from './types'
 
-export async function prepare(pluginConfig: PluginConfig, context: Context): Promise<void> {
+export async function prepare(pluginConfig: PluginConfig, context: PrepareContext): Promise<void> {
     if (!pluginConfig.buildImage) {
         context.logger.log('No "buildImage" command provided, skipping prepare step')
 

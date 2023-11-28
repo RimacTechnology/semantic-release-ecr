@@ -1,7 +1,7 @@
 import type { Config } from 'semantic-release'
 
-export type WithoutNullableKeys<Type> = {
-    [Key in keyof Type]-?: WithoutNullableKeys<NonNullable<Type[Key]>>
+export type WithoutNullableKeysType<TType> = {
+    [Key in keyof TType]-?: WithoutNullableKeysType<NonNullable<TType[Key]>>
 }
 
 export interface PluginConfig extends Config {

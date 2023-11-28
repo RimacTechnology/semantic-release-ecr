@@ -5,16 +5,16 @@ import {
     GetAuthorizationTokenCommand,
 } from '@aws-sdk/client-ecr'
 import AggregateError from 'aggregate-error'
-import type { Context } from 'semantic-release'
+import type { VerifyConditionsContext } from 'semantic-release'
 
 import type {
-    AWSConfig,
-    AWSLoginValue,
+    AWSConfigType,
+    AWSLoginValueType,
 } from './aws.types'
 import { getError } from './error'
 
 export class AWS {
-    public static loadConfig(context: Context): AWSConfig {
+    public static loadConfig(context: VerifyConditionsContext): AWSConfigType {
         let region: string | null = null
         let accessKeyId: string | null = null
         let secretAccessKey: string | null = null
@@ -50,17 +50,19 @@ export class AWS {
         })
     }
 
-    public async login(): Promise<AWSLoginValue> {
+    public async login(): Promise<AWSLoginValueType> {
         const { authorizationData } = await this.awsEcr.send(new GetAuthorizationTokenCommand({}))
 
-        if (!authorizationData?.length) {
+        const [authorization] = authorizationData ?? []
+
+        if (!authorization) {
             throw new AggregateError([getError('ENOAUTHORIZATION')])
         }
 
-        const [{
+        const {
             authorizationToken,
             proxyEndpoint,
-        }] = authorizationData
+        } = authorization
 
         if (!authorizationToken || !proxyEndpoint) {
             throw new AggregateError([getError('ENOAUTHORIZATION')])
@@ -69,6 +71,10 @@ export class AWS {
         const [username, password] = Buffer.from(authorizationToken, 'base64')
             .toString('utf-8')
             .split(':')
+
+        if (!username || !password) {
+            throw new AggregateError([getError('ENOAUTHORIZATION')])
+        }
 
         return {
             password,
