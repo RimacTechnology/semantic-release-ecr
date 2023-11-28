@@ -10,8 +10,8 @@
     "repository": "git@github.com:RimacTechnology/semantic-release-ecr.git",
     "license": "MIT",
     "author": "Rimac Technology d.o.o.",
-    "main": "dist/index.js",
     "type": "module",
+    "main": "dist/index.js",
     "files": [
         "dist"
     ],
@@ -23,7 +23,7 @@
         "lint:cspell": "cspell --no-progress --unique --no-summary '**'",
         "lint:eslint": "eslint './src' --quiet --cache",
         "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
-        "lint:package-json": "npmPkgJsonLint --configFile ./.packagerc.js .",
+        "lint:package-json": "npmPkgJsonLint --configFile .packagerc.cjs .",
         "lint:prettier": "prettier --log-level warn --check './**/*{yaml,yml,json,md,graphql}'",
         "prepack": "pinst --disable",
         "postpack": "pinst --enable",
