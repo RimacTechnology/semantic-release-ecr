@@ -17,7 +17,7 @@ class SemanticReleaseError extends Error {
     }
 }
 
-type ErrorCodes =
+type ErrorCodesType =
     | 'EBUILD'
     | 'EDEPLOY'
     | 'ENOACCESSKEYID'
@@ -28,7 +28,7 @@ type ErrorCodes =
     | 'ENOREGION'
     | 'ENOSECRETACCESSKEY'
 
-export function getError(code: ErrorCodes): SemanticReleaseError {
+export function getError(code: ErrorCodesType): SemanticReleaseError {
     switch (code) {
         case 'ENOACCESSKEYID': {
             return new SemanticReleaseError(

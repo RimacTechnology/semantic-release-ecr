@@ -1,9 +1,27 @@
-## [1.2.0](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v1.2.0) (2023-04-18)
+## [2.0.0-alpha.2](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2023-11-28)
 
+
+### Bug Fixes
+
+* set library type as "module" and export valid esm ([04ffb73](https://github.com/RimacTechnology/semantic-release-ecr/commit/04ffb73aacd754123d2f62100b61e7d989a32abb))
+
+
+### Other
+
+* update `semantic-release` config to use `cjs` extension ([b322e9e](https://github.com/RimacTechnology/semantic-release-ecr/commit/b322e9e60f3c140df6c05609a5b6a0a8cc7ac256))
+* update all lint package to use `cjs` extension ([a31eb3a](https://github.com/RimacTechnology/semantic-release-ecr/commit/a31eb3a52d0fbef3d3c2515f332cb5e653b4c515))
+
+## [2.0.0-alpha.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v2.0.0-alpha.1) (2023-11-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* ESM support
 
 ### Features
 
 * replace soon to be deprecated aws-sdk v2 with v3 and update dependencies ([e53ae20](https://github.com/RimacTechnology/semantic-release-ecr/commit/e53ae207bcfdaa8b56d3f90c8c80c82620e7744d))
+* update to latest v22 `semantic-release` ([a22b9c5](https://github.com/RimacTechnology/semantic-release-ecr/commit/a22b9c50591155f3a38f755b6fb8230b11c21395))
 
 ## [1.2.0-beta.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v1.2.0-beta.1) (2023-04-18)
 

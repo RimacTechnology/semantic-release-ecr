@@ -1,4 +1,4 @@
-export type AWSConfig = {
+export type AWSConfigType = {
     /**
      * AWS access key id
      *
@@ -19,7 +19,7 @@ export type AWSConfig = {
     secretAccessKey: string | null
 }
 
-export type AWSLoginValue = {
+export type AWSLoginValueType = {
     /**
      * Password value decoded from authorization token
      * Documentation: https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ecr/get-authorization-token.html#output

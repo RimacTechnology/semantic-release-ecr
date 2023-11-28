@@ -1,17 +1,17 @@
 import AggregateError from 'aggregate-error'
-import type { Context } from 'semantic-release'
+import type { PublishContext } from 'semantic-release'
 
 import { AWS } from './aws'
-import type { AWSConfig } from './aws.types'
+import type { AWSConfigType } from './aws.types'
 import { Docker } from './docker'
 import { getError } from './error'
 import type {
     PluginConfig,
-    WithoutNullableKeys,
+    WithoutNullableKeysType,
 } from './types'
 
-export async function publish(pluginConfig: PluginConfig, context: Context): Promise<void> {
-    const awsConfig = AWS.loadConfig(context) as WithoutNullableKeys<AWSConfig>
+export async function publish(pluginConfig: PluginConfig, context: PublishContext): Promise<void> {
+    const awsConfig = AWS.loadConfig(context) as WithoutNullableKeysType<AWSConfigType>
     const aws = new AWS(
         awsConfig.accessKeyId,
         awsConfig.region,
@@ -35,7 +35,7 @@ export async function publish(pluginConfig: PluginConfig, context: Context): Pro
 
     const dockerConfig = Docker.loadConfig(pluginConfig, context)
 
-    // eslint-disable-next-line max-len
+    // eslint-disable-next-line max-len -- Disabled to have more readable log
     context.logger.log(`Pushing ${pluginConfig.imageName} with tags [${dockerConfig.imageTags.join(', ')}] to ${awsLoginValue.registry}`)
 
     const dockerPush = await docker.push(
@@ -48,6 +48,6 @@ export async function publish(pluginConfig: PluginConfig, context: Context): Pro
         throw new AggregateError([getError('EDEPLOY')])
     }
 
-    // eslint-disable-next-line max-len
+    // eslint-disable-next-line max-len -- Disabled to have more readable log
     context.logger.log(`Successfully pushed ${pluginConfig.imageName} with tags [${dockerConfig.imageTags.join(', ')}] to ${awsLoginValue.registry}`)
 }

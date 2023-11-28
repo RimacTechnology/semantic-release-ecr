@@ -1,4 +1,4 @@
-export type DockerConfig = {
+export type DockerConfigType = {
     /**
      * The name of the image to push to the ECR
      *
@@ -13,7 +13,7 @@ export type DockerConfig = {
     imageTags: string[]
 }
 
-export type DockerImage = {
+export type DockerImageType = {
     /**
      * Docker image ID
      *
