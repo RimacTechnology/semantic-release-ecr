@@ -1,3 +1,15 @@
+## [2.0.0-alpha.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v2.0.0-alpha.1) (2023-11-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* ESM support
+
+### Features
+
+* replace soon to be deprecated aws-sdk v2 with v3 and update dependencies ([e53ae20](https://github.com/RimacTechnology/semantic-release-ecr/commit/e53ae207bcfdaa8b56d3f90c8c80c82620e7744d))
+* update to latest v22 `semantic-release` ([a22b9c5](https://github.com/RimacTechnology/semantic-release-ecr/commit/a22b9c50591155f3a38f755b6fb8230b11c21395))
+
 ## [1.2.0-beta.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.1.1...v1.2.0-beta.1) (2023-04-18)
 
 
