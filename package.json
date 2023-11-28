@@ -11,11 +11,12 @@
     "license": "MIT",
     "author": "Rimac Technology d.o.o.",
     "main": "dist/index.js",
+    "type": "module",
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "tsup",
         "cm": "cz",
         "postinstall": "husky install",
         "lint": "yarn lint:cspell && yarn lint:prettier && yarn lint:package-json && yarn lint:eslint",
@@ -62,6 +63,7 @@
         "pinst": "^3.0.0",
         "prettier": "^3.1.0",
         "semantic-release": "^22.0.8",
+        "tsup": "^8.0.1",
         "typescript": "^5.3.2"
     },
     "peerDependencies": {
