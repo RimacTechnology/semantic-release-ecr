@@ -1,7 +1,7 @@
 import {
     exec,
     execSync,
-} from 'child_process'
+} from 'node:child_process'
 
 import AggregateError from 'aggregate-error'
 import type { PublishContext } from 'semantic-release'
@@ -9,9 +9,9 @@ import type { PublishContext } from 'semantic-release'
 import type {
     DockerConfigType,
     DockerImageType,
-} from './docker.types'
-import { getError } from './error'
-import type { PluginConfig } from './types'
+} from './docker.types.js'
+import { getError } from './error.js'
+import type { PluginConfig } from './types.js'
 
 export class Docker {
     public static loadConfig(pluginConfig: PluginConfig, context: PublishContext): DockerConfigType {

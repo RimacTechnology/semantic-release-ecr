@@ -7,16 +7,17 @@
         "skipLibCheck": true,
         "esModuleInterop": true,
         "lib": ["ES2023", "DOM", "DOM.ITERABLE"],
-        "moduleResolution": "node",
+        "moduleResolution": "Node16",
         "forceConsistentCasingInFileNames": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "strictNullChecks": true,
         "noUncheckedIndexedAccess": true,
         "strict": true,
+        "allowJs": true,
         "outDir": "dist",
         "target": "ES2022",
-        "module": "ESNext"
+        "module": "Node16"
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]

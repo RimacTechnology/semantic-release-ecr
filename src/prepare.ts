@@ -1,9 +1,9 @@
 import AggregateError from 'aggregate-error'
 import type { PrepareContext } from 'semantic-release'
 
-import { Docker } from './docker'
-import { getError } from './error'
-import type { PluginConfig } from './types'
+import { Docker } from './docker.js'
+import { getError } from './error.js'
+import type { PluginConfig } from './types.js'
 
 export async function prepare(pluginConfig: PluginConfig, context: PrepareContext): Promise<void> {
     if (!pluginConfig.buildImage) {

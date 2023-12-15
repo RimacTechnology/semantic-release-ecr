@@ -1,4 +1,4 @@
-import { Buffer } from 'buffer'
+import { Buffer } from 'node:buffer'
 
 import {
     ECRClient,
@@ -10,8 +10,8 @@ import type { VerifyConditionsContext } from 'semantic-release'
 import type {
     AWSConfigType,
     AWSLoginValueType,
-} from './aws.types'
-import { getError } from './error'
+} from './aws.types.js'
+import { getError } from './error.js'
 
 export class AWS {
     public static loadConfig(context: VerifyConditionsContext): AWSConfigType {

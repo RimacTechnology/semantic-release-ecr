@@ -1,14 +1,14 @@
 import AggregateError from 'aggregate-error'
 import type { PublishContext } from 'semantic-release'
 
-import { AWS } from './aws'
-import type { AWSConfigType } from './aws.types'
-import { Docker } from './docker'
-import { getError } from './error'
+import { AWS } from './aws.js'
+import type { AWSConfigType } from './aws.types.js'
+import { Docker } from './docker.js'
+import { getError } from './error.js'
 import type {
     PluginConfig,
     WithoutNullableKeysType,
-} from './types'
+} from './types.js'
 
 export async function publish(pluginConfig: PluginConfig, context: PublishContext): Promise<void> {
     const awsConfig = AWS.loadConfig(context) as WithoutNullableKeysType<AWSConfigType>
