@@ -9,7 +9,7 @@ module.exports = {
         '!.*.mjs',
         '!.*.ts',
     ],
-    overrides: [{ files: ['./src/**/*.{js,cjs,mjs,ts}'] }],
+    overrides: [{ files: ['./**/*.{js,cjs,mjs,ts}'] }],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         project: './tsconfig.lint.json',
