@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.0...v2.0.1) (2023-12-15)
+
+
+### Other
+
+* update deps, update nodejs import paths and eslint configuration ([36be9f5](https://github.com/RimacTechnology/semantic-release-ecr/commit/36be9f5661444fc85b0d14759d606e8ab07b61d9))
+
 ## [2.0.0](https://github.com/RimacTechnology/semantic-release-ecr/compare/v1.2.0...v2.0.0) (2023-11-28)
 
 
