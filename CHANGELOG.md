@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.1...v2.0.2) (2024-01-10)
+
+
+### Other
+
+* update dependencies, licence and remove unused `yarn` plugins ([b4325e6](https://github.com/RimacTechnology/semantic-release-ecr/commit/b4325e6069099bebbd5fc1b075ba68e8bb24fc2f))
+
 ## [2.0.1](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.0...v2.0.1) (2023-12-15)
 
 
