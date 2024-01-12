@@ -5,8 +5,13 @@
     "keywords": [
         "release",
         "semantic-release",
-        "ecr"
+        "ecr",
+        "aws"
     ],
+    "homepage": "https://github.com/RimacTechnology/semantic-release-ecr#readme",
+    "bugs": {
+        "url": "https://github.com/RimacTechnology/semantic-release-ecr/issues"
+    },
     "repository": "git@github.com:RimacTechnology/semantic-release-ecr.git",
     "license": "MIT",
     "author": "Rimac Technology d.o.o.",
@@ -40,7 +45,7 @@
         }
     },
     "dependencies": {
-        "@aws-sdk/client-ecr": "^3.485.0",
+        "@aws-sdk/client-ecr": "^3.490.0",
         "aggregate-error": "^5.0.0"
     },
     "devDependencies": {
@@ -53,8 +58,8 @@
         "@semantic-release/github": "^9.2.6",
         "@semantic-release/npm": "^11.0.2",
         "@semantic-release/release-notes-generator": "^12.1.0",
-        "@types/eslint": "^8.56.1",
-        "@types/node": "^20.10.8",
+        "@types/eslint": "^8.56.2",
+        "@types/node": "^20.11.0",
         "commitizen": "^4.3.0",
         "conventional-changelog-conventionalcommits": "^7.0.2",
         "cspell": "^8.3.2",
