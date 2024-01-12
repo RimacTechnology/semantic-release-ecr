@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.2...v2.0.3) (2024-01-12)
+
+
+### Other
+
+* update dependencies and add meta info to `package.json` like homepage and issues location ([acba67e](https://github.com/RimacTechnology/semantic-release-ecr/commit/acba67e2dba397edf17c7727dc1153d6c942f5cd))
+
 ## [2.0.2](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.1...v2.0.2) (2024-01-10)
 
 
