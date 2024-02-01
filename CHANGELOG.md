@@ -1,3 +1,11 @@
+## [2.0.4](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.3...v2.0.4) (2024-02-01)
+
+
+### Other
+
+* disable husky in github actions ([2235d1f](https://github.com/RimacTechnology/semantic-release-ecr/commit/2235d1fc6217b34a6b3e2c060b10fd4225a0fd3a))
+* update dependencies and `yarn` to latest version ([e7ebbbf](https://github.com/RimacTechnology/semantic-release-ecr/commit/e7ebbbfc8827b275c5a1e41e43b8ede16e60a60a))
+
 ## [2.0.3](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.2...v2.0.3) (2024-01-12)
 
 
