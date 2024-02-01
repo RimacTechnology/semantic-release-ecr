@@ -16,18 +16,16 @@ jobs:
               with:
                   fetch-depth: 0
                   persist-credentials: false
-            - uses: actions/cache@v3
+            - uses: actions/setup-node@v4
               with:
-                  path: |
-                      node_modules
-                      .yarn/cache
-                  key: node_modules-${{ hashFiles('**/yarn.lock') }}
+                  node-version: 20.x
+                  cache: yarn
             - run: yarn install
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: yarn lint
             - run: yarn build
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               with:
                   name: dist
                   path: dist/
@@ -41,16 +39,17 @@ jobs:
               with:
                   fetch-depth: 0
                   persist-credentials: false
-            - uses: actions/cache@v3
+            - uses: actions/setup-node@v4
               with:
-                  path: |
-                      node_modules
-                      .yarn/cache
-                  key: node_modules-${{ hashFiles('**/yarn.lock') }}
-            - uses: actions/download-artifact@v3
+                  node-version: 20.x
+                  cache: yarn
+            - uses: actions/download-artifact@v4
               with:
                   name: dist
                   path: dist/
+            - run: yarn install
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: yarn release
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
