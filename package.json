@@ -23,7 +23,7 @@
     "scripts": {
         "build": "tsup",
         "cm": "cz",
-        "postinstall": "husky install",
+        "postinstall": "husky",
         "lint": "yarn lint:cspell && yarn lint:prettier && yarn lint:package-json && yarn lint:eslint",
         "lint:cspell": "cspell --no-progress --unique --no-summary '**'",
         "lint:eslint": "eslint ./ --quiet --cache --cache-location node_modules/.cache/eslint/.eslintcache",

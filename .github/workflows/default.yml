@@ -22,6 +22,7 @@ jobs:
                   cache: yarn
             - run: yarn install
               env:
+                  HUSKY: 0
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: yarn lint
             - run: yarn build
@@ -49,6 +50,7 @@ jobs:
                   path: dist/
             - run: yarn install
               env:
+                  HUSKY: 0
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: yarn release
               env:
