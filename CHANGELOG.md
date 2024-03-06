@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.4...v2.0.5) (2024-03-06)
+
+
+### Other
+
+* update dependencies and `yarn` to latest version ([c9584e8](https://github.com/RimacTechnology/semantic-release-ecr/commit/c9584e82bf31a0ad4e4ca841bad344adb8058022))
+
 ## [2.0.4](https://github.com/RimacTechnology/semantic-release-ecr/compare/v2.0.3...v2.0.4) (2024-02-01)
 
 
