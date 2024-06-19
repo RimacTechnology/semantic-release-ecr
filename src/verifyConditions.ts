@@ -1,4 +1,3 @@
-import AggregateError from 'aggregate-error'
 import type { VerifyConditionsContext } from 'semantic-release'
 
 import { AWS } from './aws.js'

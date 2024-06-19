@@ -1,15 +1,8 @@
-import {
-    exec,
-    execSync,
-} from 'node:child_process'
+import { exec, execSync } from 'node:child_process'
 
-import AggregateError from 'aggregate-error'
 import type { PublishContext } from 'semantic-release'
 
-import type {
-    DockerConfigType,
-    DockerImageType,
-} from './docker.types.js'
+import type { DockerConfigType, DockerImageType } from './docker.types.js'
 import { getError } from './error.js'
 import type { PluginConfig } from './types.js'
 
@@ -61,7 +54,7 @@ export class Docker {
                     } else {
                         resolve(stdout.startsWith('Login Succeeded'))
                     }
-                }
+                },
             )
 
             childProcess.stdin?.write(password)
@@ -102,16 +95,12 @@ export class Docker {
     }
 
     private getImage(name: string): DockerImageType | undefined {
-        const stdout = execSync('docker images --format "{{json . }}"')
-            .toString('utf-8')
-            .match(/.+/gu)
+        const stdout = execSync('docker images --format "{{json . }}"').toString('utf-8').match(/.+/gu)
 
         if (!stdout) {
             return
         }
 
-        return stdout
-            .map<DockerImageType>((value) => JSON.parse(value))
-            .find((image) => image.Repository === name)
+        return stdout.map<DockerImageType>((value) => JSON.parse(value)).find((image) => image.Repository === name)
     }
 }

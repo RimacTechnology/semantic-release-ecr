@@ -2,12 +2,7 @@
     "name": "@rimac-technology/semantic-release-ecr",
     "version": "2.0.5",
     "description": "Semantic-release plugin to publish a docker image to the AWS Elastic Container Registry",
-    "keywords": [
-        "release",
-        "semantic-release",
-        "ecr",
-        "aws"
-    ],
+    "keywords": ["release", "semantic-release", "ecr", "aws"],
     "homepage": "https://github.com/RimacTechnology/semantic-release-ecr#readme",
     "bugs": {
         "url": "https://github.com/RimacTechnology/semantic-release-ecr/issues"
@@ -17,27 +12,23 @@
     "author": "Rimac Technology d.o.o.",
     "type": "module",
     "main": "dist/index.js",
-    "files": [
-        "dist"
-    ],
+    "files": ["dist"],
     "scripts": {
-        "build": "tsup",
+        "build": "turbo run build:all",
+        "build:ts": "tsup --config tsup.config.ts",
         "cm": "cz",
+        "format": "turbo run format:all",
+        "format:ts": "biome format --diagnostic-level=error .",
         "postinstall": "husky",
-        "lint": "yarn lint:cspell && yarn lint:prettier && yarn lint:package-json && yarn lint:eslint",
+        "lint": "turbo run lint:all",
+        "lint:ts": "biome lint --diagnostic-level=error .",
         "lint:cspell": "cspell --no-progress --unique --no-summary '**'",
-        "lint:eslint": "eslint ./ --quiet --cache --cache-location node_modules/.cache/eslint/.eslintcache",
-        "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
-        "lint:package-json": "npmPkgJsonLint --configFile .packagerc.cjs .",
-        "lint:prettier": "prettier --cache --check './**/*{yaml,yml,json,md,graphql}'",
         "prepack": "pinst --disable",
         "postpack": "pinst --enable",
         "release": "semantic-release"
     },
     "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
+        "extends": ["@commitlint/config-conventional"]
     },
     "config": {
         "commitizen": {
@@ -45,37 +36,32 @@
         }
     },
     "dependencies": {
-        "@aws-sdk/client-ecr": "^3.525.0",
-        "aggregate-error": "^5.0.0"
+        "@aws-sdk/client-ecr": "^3.600.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^18.6.0",
-        "@commitlint/config-conventional": "^18.6.0",
-        "@rimac-technology/style-guide": "^10.0.0",
-        "@semantic-release/changelog": "^6.0.3",
-        "@semantic-release/commit-analyzer": "^11.1.0",
+        "@biomejs/biome": "^1.8.1",
+        "@commitlint/cli": "^19.3.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "@semantic-release/commit-analyzer": "^13.0.0",
         "@semantic-release/git": "^10.0.1",
-        "@semantic-release/github": "^9.2.6",
-        "@semantic-release/npm": "^11.0.3",
-        "@semantic-release/release-notes-generator": "^12.1.0",
-        "@types/eslint": "^8.56.5",
-        "@types/node": "^20.11.24",
+        "@semantic-release/github": "^10.0.6",
+        "@semantic-release/npm": "^12.0.1",
+        "@semantic-release/release-notes-generator": "^14.0.0",
+        "@types/node": "^20.14.5",
         "commitizen": "^4.3.0",
-        "conventional-changelog-conventionalcommits": "^7.0.2",
-        "cspell": "^8.6.0",
-        "eslint": "^8.57.0",
+        "conventional-changelog-conventionalcommits": "^8.0.0",
+        "cspell": "^8.9.0",
         "husky": "^9.0.11",
-        "npm-package-json-lint": "^7.1.0",
         "pinst": "^3.0.0",
-        "prettier": "^3.2.5",
-        "semantic-release": "^23.0.2",
-        "tsup": "^8.0.2",
-        "typescript": "^5.3.3"
+        "semantic-release": "^24.0.0",
+        "tsup": "^8.1.0",
+        "turbo": "^2.0.4",
+        "typescript": "^5.4.5"
     },
     "peerDependencies": {
         "semantic-release": ">=20"
     },
-    "packageManager": "yarn@4.1.1",
+    "packageManager": "yarn@4.3.0",
     "engines": {
         "node": ">=20"
     },

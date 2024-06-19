@@ -1,16 +1,9 @@
 import { Buffer } from 'node:buffer'
 
-import {
-    ECRClient,
-    GetAuthorizationTokenCommand,
-} from '@aws-sdk/client-ecr'
-import AggregateError from 'aggregate-error'
+import { ECRClient, GetAuthorizationTokenCommand } from '@aws-sdk/client-ecr'
 import type { VerifyConditionsContext } from 'semantic-release'
 
-import type {
-    AWSConfigType,
-    AWSLoginValueType,
-} from './aws.types.js'
+import type { AWSConfigType, AWSLoginValueType } from './aws.types.js'
 import { getError } from './error.js'
 
 export class AWS {
@@ -59,18 +52,13 @@ export class AWS {
             throw new AggregateError([getError('ENOAUTHORIZATION')])
         }
 
-        const {
-            authorizationToken,
-            proxyEndpoint,
-        } = authorization
+        const { authorizationToken, proxyEndpoint } = authorization
 
         if (!authorizationToken || !proxyEndpoint) {
             throw new AggregateError([getError('ENOAUTHORIZATION')])
         }
 
-        const [username, password] = Buffer.from(authorizationToken, 'base64')
-            .toString('utf-8')
-            .split(':')
+        const [username, password] = Buffer.from(authorizationToken, 'base64').toString('utf-8').split(':')
 
         if (!username || !password) {
             throw new AggregateError([getError('ENOAUTHORIZATION')])

@@ -1,4 +1,3 @@
-import AggregateError from 'aggregate-error'
 import type { PrepareContext } from 'semantic-release'
 
 import { Docker } from './docker.js'

@@ -41,4 +41,3 @@ export type AWSLoginValueType = {
      */
     username: string
 }
-
