@@ -1,8 +1,13 @@
 {
     "name": "@rimac-technology/semantic-release-ecr",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "description": "Semantic-release plugin to publish a docker image to the AWS Elastic Container Registry",
-    "keywords": ["release", "semantic-release", "ecr", "aws"],
+    "keywords": [
+        "release",
+        "semantic-release",
+        "ecr",
+        "aws"
+    ],
     "homepage": "https://github.com/RimacTechnology/semantic-release-ecr#readme",
     "bugs": {
         "url": "https://github.com/RimacTechnology/semantic-release-ecr/issues"
@@ -12,7 +17,9 @@
     "author": "Rimac Technology d.o.o.",
     "type": "module",
     "main": "dist/index.js",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "build": "turbo run build:all",
         "build:ts": "tsup --config tsup.config.ts",
@@ -28,7 +35,9 @@
         "release": "semantic-release"
     },
     "commitlint": {
-        "extends": ["@commitlint/config-conventional"]
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     },
     "config": {
         "commitizen": {
