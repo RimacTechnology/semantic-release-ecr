@@ -16,7 +16,11 @@
     "license": "MIT",
     "author": "Rimac Technology d.o.o.",
     "type": "module",
-    "main": "dist/index.js",
+    "exports": {
+        ".": {
+            "default": "./dist/index.js"
+        }
+    },
     "files": [
         "dist"
     ],
