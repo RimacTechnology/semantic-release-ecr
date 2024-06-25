@@ -23,7 +23,6 @@ export async function publish(pluginConfig: PluginConfig, context: PublishContex
 
     const dockerConfig = Docker.loadConfig(pluginConfig, context)
 
-    // eslint-disable-next-line max-len -- Disabled to have more readable log
     context.logger.log(
         `Pushing ${pluginConfig.imageName} with tags [${dockerConfig.imageTags.join(', ')}] to ${awsLoginValue.registry}`,
     )
@@ -34,7 +33,6 @@ export async function publish(pluginConfig: PluginConfig, context: PublishContex
         throw new AggregateError([getError('EDEPLOY')])
     }
 
-    // eslint-disable-next-line max-len -- Disabled to have more readable log
     context.logger.log(
         `Successfully pushed ${pluginConfig.imageName} with tags [${dockerConfig.imageTags.join(', ')}] to ${awsLoginValue.registry}`,
     )
