@@ -49,27 +49,27 @@
         }
     },
     "dependencies": {
-        "@aws-sdk/client-ecr": "^3.600.0"
+        "@aws-sdk/client-ecr": "^3.616.0"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.8.2",
+        "@biomejs/biome": "^1.8.3",
         "@commitlint/cli": "^19.3.0",
         "@commitlint/config-conventional": "^19.2.2",
         "@semantic-release/commit-analyzer": "^13.0.0",
         "@semantic-release/git": "^10.0.1",
-        "@semantic-release/github": "^10.0.6",
+        "@semantic-release/github": "^10.1.1",
         "@semantic-release/npm": "^12.0.1",
         "@semantic-release/release-notes-generator": "^14.0.1",
-        "@types/node": "^20.14.8",
+        "@types/node": "^20.14.12",
         "commitizen": "^4.3.0",
         "conventional-changelog-conventionalcommits": "^8.0.0",
-        "cspell": "^8.9.1",
-        "husky": "^9.0.11",
+        "cspell": "^8.12.1",
+        "husky": "^9.1.1",
         "pinst": "^3.0.0",
         "semantic-release": "^24.0.0",
-        "tsup": "^8.1.0",
-        "turbo": "^2.0.5",
-        "typescript": "^5.5.2"
+        "tsup": "^8.2.3",
+        "turbo": "^2.0.9",
+        "typescript": "^5.5.4"
     },
     "peerDependencies": {
         "semantic-release": ">=20"
