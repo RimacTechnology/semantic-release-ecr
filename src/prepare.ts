@@ -11,10 +11,16 @@ export async function prepare(pluginConfig: PluginConfig, context: PrepareContex
         return
     }
 
+    const [command, ...commandOptions] = pluginConfig.buildImage.match(/(?:[^\s"]+|"[^"]*")+/g) ?? []
+
+    if (!command) {
+        throw new AggregateError([getError('ECOMMAND')])
+    }
+
     context.logger.log('Found "buildImage" command, building docker image')
 
     const docker = new Docker()
-    const dockerBuild = await docker.build(pluginConfig.buildImage)
+    const dockerBuild = await docker.build([command, commandOptions])
 
     if (!dockerBuild) {
         throw new AggregateError([getError('EBUILD')])

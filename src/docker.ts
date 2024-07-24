@@ -1,4 +1,4 @@
-import { exec, execSync } from 'node:child_process'
+import { exec, execSync, spawn } from 'node:child_process'
 
 import type { PublishContext } from 'semantic-release'
 
@@ -29,18 +29,25 @@ export class Docker {
         }
     }
 
-    public async build(command: string): Promise<boolean> {
+    public async build(command: [string, string[]]): Promise<boolean> {
         return new Promise((resolve, reject) => {
-            const childProcess = exec(command, (error) => {
-                if (error) {
-                    reject(error)
-                } else {
-                    resolve(true)
-                }
-            })
+            const [cmd, cmdOptions] = command
+            const childProcess = spawn(cmd, cmdOptions, { shell: true })
 
             childProcess.stdout?.pipe(process.stdout)
             childProcess.stderr?.pipe(process.stderr)
+
+            childProcess.once('close', (code) => {
+                if (code === 0) {
+                    resolve(true)
+                } else {
+                    reject(new Error(`Process exited with code ${code}`))
+                }
+            })
+
+            childProcess.once('error', (error) => {
+                reject(error)
+            })
         })
     }
 
