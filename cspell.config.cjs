@@ -21,5 +21,6 @@ module.exports = {
         'ENOIMAGENAME',
         'ENOREGION',
         'ENOSECRETACCESSKEY',
+        'ECOMMAND',
     ],
 }
