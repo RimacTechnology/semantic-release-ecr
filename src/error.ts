@@ -19,6 +19,7 @@ class SemanticReleaseError extends Error {
 
 type ErrorCodesType =
     | 'EBUILD'
+    | 'ECOMMAND'
     | 'EDEPLOY'
     | 'ENOACCESSKEYID'
     | 'ENOAUTHENTICATION'
@@ -71,6 +72,10 @@ export function getError(code: ErrorCodesType): SemanticReleaseError {
 
         case 'EBUILD': {
             return new SemanticReleaseError('Error executing docker build.', 'EBUILD')
+        }
+
+        case 'ECOMMAND': {
+            return new SemanticReleaseError('Error while parsing build image command.', 'ECOMMAND')
         }
 
         case 'ENOIMAGE': {
