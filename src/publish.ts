@@ -8,7 +8,7 @@ import type { PluginConfig, WithoutNullableKeysType } from './types.js'
 
 export async function publish(pluginConfig: PluginConfig, context: PublishContext): Promise<void> {
     const awsConfig = AWS.loadConfig(context) as WithoutNullableKeysType<AWSConfigType>
-    const aws = new AWS(awsConfig.accessKeyId, awsConfig.region, awsConfig.secretAccessKey)
+    const aws = new AWS(awsConfig.accessKeyId, awsConfig.region, awsConfig.secretAccessKey, awsConfig.sessionToken)
 
     const awsLoginValue = await aws.login()
 
