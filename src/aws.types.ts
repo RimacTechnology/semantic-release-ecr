@@ -17,6 +17,13 @@ export type AWSConfigType = {
      * @default ""
      */
     secretAccessKey: string | null
+
+    /**
+     * (optional) AWS session token for the provided credentials
+     *
+     * @default ""
+     */
+    sessionToken: string | null
 }
 
 export type AWSLoginValueType = {

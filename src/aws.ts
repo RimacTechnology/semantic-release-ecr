@@ -11,6 +11,7 @@ export class AWS {
         let region: string | null = null
         let accessKeyId: string | null = null
         let secretAccessKey: string | null = null
+        let sessionToken: string | null = null
 
         if (context.env.AWS_DEFAULT_REGION) {
             region = context.env.AWS_DEFAULT_REGION
@@ -24,20 +25,26 @@ export class AWS {
             secretAccessKey = context.env.AWS_SECRET_ACCESS_KEY
         }
 
+        if (context.env.AWS_SESSION_TOKEN) {
+            sessionToken = context.env.AWS_SESSION_TOKEN
+        }
+
         return {
             accessKeyId,
             region,
             secretAccessKey,
+            sessionToken
         }
     }
 
     public readonly awsEcr: InstanceType<typeof ECRClient>
 
-    constructor(accessKeyId: string, region: string, secretAccessKey: string) {
+    constructor(accessKeyId: string, region: string, secretAccessKey: string, sessionToken: string) {
         this.awsEcr = new ECRClient({
             credentials: {
                 accessKeyId,
                 secretAccessKey,
+                sessionToken
             },
             region,
         })
