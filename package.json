@@ -2,12 +2,7 @@
     "name": "@rimac-technology/semantic-release-ecr",
     "version": "2.1.1",
     "description": "Semantic-release plugin to publish a docker image to the AWS Elastic Container Registry",
-    "keywords": [
-        "release",
-        "semantic-release",
-        "ecr",
-        "aws"
-    ],
+    "keywords": ["release", "semantic-release", "ecr", "aws"],
     "homepage": "https://github.com/RimacTechnology/semantic-release-ecr#readme",
     "bugs": {
         "url": "https://github.com/RimacTechnology/semantic-release-ecr/issues"
@@ -21,9 +16,7 @@
             "default": "./dist/index.js"
         }
     },
-    "files": [
-        "dist"
-    ],
+    "files": ["dist"],
     "scripts": {
         "build": "turbo run build:all",
         "build:ts": "tsup --config tsup.config.ts",
@@ -39,9 +32,11 @@
         "release": "semantic-release"
     },
     "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
+        "extends": ["@commitlint/config-conventional"],
+        "rules": {
+            "header-max-length": [2, "always", 500],
+            "body-max-line-length": [2, "always", 500]
+        }
     },
     "config": {
         "commitizen": {
@@ -49,27 +44,27 @@
         }
     },
     "dependencies": {
-        "@aws-sdk/client-ecr": "^3.720.0"
+        "@aws-sdk/client-ecr": "^3.726.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "@commitlint/cli": "^19.6.1",
         "@commitlint/config-conventional": "^19.6.0",
-        "@semantic-release/commit-analyzer": "^13.0.0",
+        "@semantic-release/commit-analyzer": "^13.0.1",
         "@semantic-release/git": "^10.0.1",
         "@semantic-release/github": "^11.0.1",
         "@semantic-release/npm": "^12.0.1",
-        "@semantic-release/release-notes-generator": "^14.0.2",
-        "@types/node": "^22.10.3",
+        "@semantic-release/release-notes-generator": "^14.0.3",
+        "@types/node": "^22.10.5",
         "commitizen": "^4.3.1",
         "conventional-changelog-conventionalcommits": "^8.0.0",
         "cspell": "^8.17.1",
         "husky": "^9.1.7",
         "pinst": "^3.0.0",
-        "semantic-release": "^24.2.0",
+        "semantic-release": "^24.2.1",
         "tsup": "^8.3.5",
         "turbo": "^2.3.3",
-        "typescript": "^5.7.2"
+        "typescript": "^5.7.3"
     },
     "peerDependencies": {
         "semantic-release": ">=20"

@@ -33,7 +33,7 @@ export class AWS {
             accessKeyId,
             region,
             secretAccessKey,
-            sessionToken
+            sessionToken,
         }
     }
 
@@ -44,7 +44,7 @@ export class AWS {
             credentials: {
                 accessKeyId,
                 secretAccessKey,
-                sessionToken
+                sessionToken,
             },
             region,
         })
