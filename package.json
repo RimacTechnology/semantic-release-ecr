@@ -61,7 +61,7 @@
         }
     },
     "dependencies": {
-        "@aws-sdk/client-ecr": "^3.744.0"
+        "@aws-sdk/client-ecr": "^3.750.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
@@ -72,13 +72,13 @@
         "@semantic-release/github": "^11.0.1",
         "@semantic-release/npm": "^12.0.1",
         "@semantic-release/release-notes-generator": "^14.0.3",
-        "@types/node": "^22.13.4",
+        "@types/node": "^22.13.5",
         "commitizen": "^4.3.1",
         "conventional-changelog-conventionalcommits": "^8.0.0",
-        "cspell": "^8.17.3",
+        "cspell": "^8.17.5",
         "husky": "^9.1.7",
         "pinst": "^3.0.0",
-        "semantic-release": "^24.2.2",
+        "semantic-release": "^24.2.3",
         "tsup": "^8.3.6",
         "turbo": "^2.4.2",
         "typescript": "^5.7.3"
