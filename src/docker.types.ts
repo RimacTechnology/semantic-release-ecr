@@ -21,7 +21,7 @@ export type DockerImageType = {
      */
     ID: string
     /**
-     * Docker repository where ICD image will be pushed
+     * Docker repository where the image will be pushed
      *
      * @default ""
      */
