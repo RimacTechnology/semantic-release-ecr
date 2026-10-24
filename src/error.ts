@@ -44,7 +44,7 @@ export function getError(code: ErrorCodesType): SemanticReleaseError {
             return new SemanticReleaseError(
                 'No aws secret access key specified.',
                 'ENOSECRETACCESSKEY',
-                'An aws secret access key id must be created and set ' +
+                'An aws secret access key must be created and set ' +
                     'in the `AWS_SECRET_ACCESS_KEY` environment variable on your CI environment.',
             )
         }

@@ -2,26 +2,26 @@ export type AWSConfigType = {
     /**
      * AWS access key id
      *
-     * @default ""
+     * @default null
      */
     accessKeyId: string | null
     /**
      * AWS region
      *
-     * @default ""
+     * @default null
      */
     region: string | null
     /**
      * AWS secret key
      *
-     * @default ""
+     * @default null
      */
     secretAccessKey: string | null
 
     /**
      * (optional) AWS session token for the provided credentials
      *
-     * @default ""
+     * @default null
      */
     sessionToken: string | null
 }
